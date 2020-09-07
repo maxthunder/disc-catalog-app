@@ -1,3 +1,38 @@
-<div>
-  <h1>Hello, World</h1>
+<!-- Always shows a header, even in smaller screens. -->
+<div class="mdl-layout mdl-js-layout mdl-layout--fixed-header background-primary">
+  <header class="mdl-layout__header">
+    <div class="mdl-layout__header-row">
+      <!-- Title -->
+      <span class="task-title mdl-layout-title" style="padding-bottom: 10px; border: thin #272727;"><a class="mdl-navigation__link" [routerLink]="['/']"><img src="../assets/maxthunder-logo.png" height="48" width="48"/></a></span>
+      <!-- Add spacer, to align navigation to the right -->
+      <div class="mdl-layout-spacer"></div>
+      <!-- Navigation. We hide it in small screens. -->
+      <nav class="mdl-navigation">
+        <a class="task-text-primary task-header-button" [routerLink]="['/']">To Do List</a>
+        <a class="task-text-primary task-header-button" [routerLink]="['/completedTasks']">Completed Tasks</a>
+      </nav>
+    </div>
+  </header>
+  <div class="mdl-layout__drawer">
+    <span class="mdl-layout-title"><img src="../assets/maxthunder-logo.png" height="48" width="48"/></span>
+    <nav class="mdl-navigation">
+      <a class="task-text-primary task-header-button" [routerLink]="['/']">To Do List</a>
+      <a class="task-text-primary task-header-button" [routerLink]="['/completedTasks']">Completed Tasks</a>
+    </nav>
+  </div>
+  <main class="mdl-layout__content">
+    <div class="page-content" style="min-height: 80%">
+      <router-outlet></router-outlet>
+    </div>
+    <footer class="mdl-mini-footer">
+      <div class="mdl-mini-footer__left-section">
+        <div class="mdl-logo"><img src="../assets/maxthunder-logo.png" height="48" width="48"/></div>
+        <ul class="mdl-mini-footer__link-list">
+          <li><a [routerLink]="['/']" style="color: white">To Do List</a></li>
+          <li><a [routerLink]="['/completedTasks']" style="color: white">Completed Tasks</a></li>
+          <li><a href="https://github.com/maxthunder" style="color: white">Developer's GitHub Page</a></li>
+        </ul>
+      </div>
+    </footer>
+  </main>
 </div>

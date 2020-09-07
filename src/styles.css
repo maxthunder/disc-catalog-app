@@ -1,1 +1,84 @@
 /* You can add global styles to this file, and also import other style files */
+
+@font-face {
+    font-family: 'Port Lligat Sans';
+    src: url(assets/PortLligatSans-Regular.ttf) format("opentype");
+}
+
+* {
+    font-family: 'Port Lligat Sans', Arial, sans-serif;
+    color: #616161;
+    box-sizing: border-box;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+.mdl-navigation__link {
+    text-decoration: none;
+    font-size: 32px;
+    font-weight: 500;
+    color: azure;
+}
+
+a:hover {
+    opacity: 0.75;
+}
+
+.button, button {
+    padding: 10px 18px;
+    display: inline-flex;
+    align-items: center;
+    border-radius: 2px;
+    font-size: 14px;
+    font-weight: 700;
+    cursor: pointer;
+    background-color: #1089F5;
+    color: white;
+    border: none;
+}
+
+.button:hover, button:hover {
+    opacity: 0.75;
+}
+
+.button:disabled, button:disabled {
+    opacity: 0.5;
+    cursor: auto;
+}
+
+.navButton:hover {
+    opacity: 0.75;
+}
+
+.task-title {
+    color: white;
+}
+
+.task-header-button {
+    font-size: 16pt;
+    padding: 20px;
+}
+
+.task-text-primary {
+    color: #353535;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+.task-text-secondary {
+    color: #FFFFFF;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+.active-task-card-event.mdl-card {
+    background: #479761;
+}
+
+.background-primary {
+    background: #272727;
+}
+
+.background-gray {
+    background: #747474
+}
