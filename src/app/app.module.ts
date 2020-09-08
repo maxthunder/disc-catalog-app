@@ -12,10 +12,11 @@ import {
 import { AppComponent } from './app.component';
 import { LoginComponent } from "./login/login.component";
 import {ProtectedComponent} from "./protected/protected.component";
+import {CatalogComponent} from "./catalog/catalog.component";
 
 const config = {
   issuer: 'https://dev-705927.okta.com/oauth2/default',
-  redirectUri: 'http://localhost:4200/implicit/callback',
+  redirectUri: 'https://www.maxthunder.net/implicit/callback',
   clientId: '0oawaajgtyCxmhZ7R4x6',
   pkce: true
 }
@@ -46,6 +47,7 @@ const appRoutes: Routes = [
 @NgModule({
   declarations: [
     AppComponent,
+    CatalogComponent,
     LoginComponent,
     ProtectedComponent
   ],
