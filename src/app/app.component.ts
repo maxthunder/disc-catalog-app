@@ -23,7 +23,7 @@ export class AppComponent implements OnInit{
   }
 
   login() {// might be able to remove this method, I believe it is unused
-    // this.oktaAuth.loginRedirect('/profile');
+    this.oktaAuth.loginRedirect('/');
   }
 
   async logout() {
