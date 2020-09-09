@@ -13,7 +13,6 @@ import { AppComponent } from './app.component';
 import { LoginComponent } from "./login/login.component";
 import {ProtectedComponent} from "./protected/protected.component";
 import {CatalogComponent} from "./catalog/catalog.component";
-import { WantedDiscsComponent } from './wanted-discs/wanted-discs.component';
 import { WishlistComponent } from './wishlist/wishlist.component';
 
 const config = {
@@ -21,7 +20,7 @@ const config = {
   redirectUri: window.location.origin + '/implicit/callback',
   clientId: '0oawaajgtyCxmhZ7R4x6',
   pkce: true
-}
+};
 
 export function onAuthRequired({ oktaAuth, router }) {
   // Redirect the user to your custom login page
