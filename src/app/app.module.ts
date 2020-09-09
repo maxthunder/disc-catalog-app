@@ -13,6 +13,8 @@ import { AppComponent } from './app.component';
 import { LoginComponent } from "./login/login.component";
 import {ProtectedComponent} from "./protected/protected.component";
 import {CatalogComponent} from "./catalog/catalog.component";
+import { WantedDiscsComponent } from './wanted-discs/wanted-discs.component';
+import { WishlistComponent } from './wishlist/wishlist.component';
 
 const config = {
   issuer: 'https://dev-705927.okta.com/oauth2/default',
@@ -42,14 +44,19 @@ const appRoutes: Routes = [
     data: {
       onAuthRequired
     }
-  }
-]
+  },
+  {
+    path: 'wishlist',
+    component: WishlistComponent,
+  },
+];
 @NgModule({
   declarations: [
     AppComponent,
     CatalogComponent,
     LoginComponent,
-    ProtectedComponent
+    ProtectedComponent,
+    WishlistComponent,
   ],
   imports: [
     BrowserModule,
