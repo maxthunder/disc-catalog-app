@@ -16,7 +16,7 @@ import {CatalogComponent} from "./catalog/catalog.component";
 
 const config = {
   issuer: 'https://dev-705927.okta.com/oauth2/default',
-  redirectUri: 'https://www.maxthunder.net/implicit/callback',
+  redirectUri: window.location.origin + '/implicit/callback',
   clientId: '0oawaajgtyCxmhZ7R4x6',
   pkce: true
 }
