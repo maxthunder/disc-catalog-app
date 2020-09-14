@@ -1,0 +1,63 @@
+<!--<table datatable [dtOptions]="dtOptions" [dtTrigger]="dtTrigger"  class="row-border hover">-->
+<!--    <thead>-->
+<!--    <tr>-->
+<!--        <th>ID</th>-->
+<!--        <th>First name</th>-->
+<!--        <th>Last name</th>-->
+<!--        <th>ID</th>-->
+<!--        <th>First name</th>-->
+<!--        <th>Last name</th>-->
+<!--        <th>ID</th>-->
+<!--        <th>First name</th>-->
+<!--        <th>Last name</th>-->
+<!--        <th>ID</th>-->
+<!--        <th>First name</th>-->
+<!--        <th>Last name</th>-->
+<!--    </tr>-->
+<!--    </thead>-->
+<!--    <tbody>-->
+<!--    <tr>-->
+<!--        <td>1</td>-->
+<!--        <td>Foo</td>-->
+<!--        <td>Bar</td>-->
+<!--    </tr>-->
+<!--    <tr>-->
+<!--        <td>1</td>-->
+<!--        <td>Foo</td>-->
+<!--        <td>Bar</td>-->
+<!--    </tr>-->
+<!--    <tr>-->
+<!--        <td>1</td>-->
+<!--        <td>Foo</td>-->
+<!--        <td>Bar</td>-->
+<!--    </tr>-->
+<!--    </tbody>-->
+<!--</table>-->
+
+<kendo-grid
+        [data]="gridView"
+        [skip]="skip"
+        [pageSize]="pageSize"
+        scrollable="virtual"
+        [rowHeight]="36"
+        [height]="450"
+        (pageChange)="pageChange($event)"
+        [navigable]="true"
+>
+    <kendo-grid-column field="brand" title="Brand" [width]="100"></kendo-grid-column>
+    <kendo-grid-column field="name" title="Name" [width]="100"></kendo-grid-column>
+    <kendo-grid-column field="plastic" title="Plastic" [width]="100"></kendo-grid-column>
+    <kendo-grid-column field="stability" title="Stability" [width]="130"></kendo-grid-column>
+    <kendo-grid-column field="speed" title="Speed" [width]="80"></kendo-grid-column>
+    <kendo-grid-column field="glide" title="Glide" [width]="80"></kendo-grid-column>
+    <kendo-grid-column field="turn" title="Turn" [width]="80"></kendo-grid-column>
+    <kendo-grid-column field="fade" title="Fade" [width]="80"></kendo-grid-column>
+    <kendo-grid-column field="isinbag" title="In Bag?" [width]="80"></kendo-grid-column>
+    <kendo-grid-column field="iscollected" title="Collected?" [width]="80"></kendo-grid-column>
+    <kendo-grid-column field="isowned" title="Owned?" [width]="130"></kendo-grid-column>
+<!--    <kendo-grid-column field="description" title="Name" [width]="130"></kendo-grid-column>-->
+<!--    <kendo-grid-column field="notes" title="Name" [width]="130"></kendo-grid-column>-->
+<!--    <kendo-grid-column field="<a>${link}</a>" title="Link" [width]="130" template="<a>${link}</a>"></kendo-grid-column>-->
+    <kendo-grid-column field="link" title="Link" [width]="130" (click)="gotoLink($event)"></kendo-grid-column>
+</kendo-grid>
+

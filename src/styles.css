@@ -5,13 +5,13 @@
     src: url(assets/PortLligatSans-Regular.ttf) format("opentype");
 }
 
-* {
-    font-family: 'Port Lligat Sans', Arial, sans-serif;
-    color: #616161;
-    box-sizing: border-box;
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
-}
+/** {*/
+/*    font-family: 'Port Lligat Sans', Arial, sans-serif;*/
+/*    color: #616161;*/
+/*    box-sizing: border-box;*/
+/*    -webkit-font-smoothing: antialiased;*/
+/*    -moz-osx-font-smoothing: grayscale;*/
+/*}*/
 
 .mdl-navigation__link {
     text-decoration: none;
@@ -22,6 +22,13 @@
 
 a:hover {
     opacity: 0.75;
+}
+
+table {
+    /*color: #479761;*/
+    color: #000000;
+    font-size: 16pt;
+    background-color: #FFFFFF;
 }
 
 .button, button {
@@ -60,7 +67,8 @@ a:hover {
 }
 
 .task-text-primary {
-    color: #353535;
+    color: white;
+    /*color: #353535;*/
     font-weight: bold;
     text-decoration: none;
 }
@@ -82,3 +90,4 @@ a:hover {
 .background-gray {
     background: #747474
 }
+

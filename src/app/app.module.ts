@@ -1,6 +1,9 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { FormsModule } from '@angular/forms';
+import { GridModule } from '@progress/kendo-angular-grid';
 
 import {
   OKTA_CONFIG,
@@ -10,10 +13,12 @@ import {
 } from '@okta/okta-angular';
 
 import { AppComponent } from './app.component';
-import { LoginComponent } from "./login/login.component";
-import {ProtectedComponent} from "./protected/protected.component";
-import {CatalogComponent} from "./catalog/catalog.component";
-import { WishlistComponent } from './wishlist/wishlist.component';
+import { LoginComponent } from "./components/login/login.component";
+import {ProtectedComponent} from "./components/protected/protected.component";
+import {CatalogComponent} from "./components/catalog/catalog.component";
+import { WishlistComponent } from './components/wishlist/wishlist.component';
+import {DataTablesModule} from "angular-datatables";
+import {HttpClientModule} from "@angular/common/http";
 
 const config = {
   issuer: 'https://dev-705927.okta.com/oauth2/default',
@@ -28,26 +33,24 @@ export function onAuthRequired({ oktaAuth, router }) {
 }
 
 const appRoutes: Routes = [
-  {
-    path: 'implicit/callback',
-    component: OktaCallbackComponent
-  },
-  {
-    path: 'login',
-    component: LoginComponent
-  },
-  {
-    path: 'protected',
-    component: ProtectedComponent,
-    canActivate: [ OktaAuthGuard ],
-    data: {
-      onAuthRequired
-    }
-  },
-  {
-    path: 'wishlist',
-    component: WishlistComponent,
-  },
+  { path: '', component: CatalogComponent },
+  { path: 'wishlist', component: WishlistComponent },
+  // {
+  //   path: 'implicit/callback',
+  //   component: OktaCallbackComponent
+  // },
+  // {
+  //   path: 'login',
+  //   component: LoginComponent
+  // },
+  // {
+  //   path: 'protected',
+  //   component: ProtectedComponent,
+  //   canActivate: [ OktaAuthGuard ],
+  //   data: {
+  //     onAuthRequired
+  //   }
+  // },
 ];
 @NgModule({
   declarations: [
@@ -60,7 +63,12 @@ const appRoutes: Routes = [
   imports: [
     BrowserModule,
     RouterModule.forRoot(appRoutes),
-    OktaAuthModule
+    OktaAuthModule,
+    DataTablesModule,
+    BrowserAnimationsModule,
+    FormsModule,
+    GridModule,
+    HttpClientModule
   ],
   providers: [
     { provide: OKTA_CONFIG, useValue: config },
