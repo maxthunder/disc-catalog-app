@@ -53,10 +53,6 @@ export class CatalogComponent implements OnDestroy {
     };
   }
 
-  private gotoLink(event: Event) {
-    console.log("Event " + event);
-  }
-
   private loadDiscsFromDb(): void {
     this.discService.loadAllDiscs()
         .pipe(take(1))
