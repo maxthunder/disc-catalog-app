@@ -29,9 +29,9 @@ const ELEMENT_DATA: PeriodicElement[] = [
   templateUrl: './catalog.component.html',
   styleUrls: ['./catalog.component.css']
 })
-export class CatalogComponent {
+export class CatalogComponent implements OnDestroy {
   private unsubscribe$ = new Subject<void>();
-  displayedColumns: string[] = ["brand", "name", "plastic", "stability", "speed", "glide", "turn", "fade", "link"];
+  displayedColumns: string[] = ["link", "brand", "name", "stability", "speed", "glide", "turn", "fade"];
   discs: Disc[];
 
   constructor(private discService: DiscService) {
@@ -50,11 +50,10 @@ export class CatalogComponent {
   }
 
 
+
   ngOnDestroy(): void {
     this.unsubscribe$.next();
     this.unsubscribe$.complete();
   }
-
-
 
 }

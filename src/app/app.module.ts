@@ -20,6 +20,7 @@ import {DataTablesModule} from "angular-datatables";
 import {HttpClientModule} from "@angular/common/http";
 import {MatTableModule} from "@angular/material/table";
 import {MatButtonModule} from "@angular/material/button";
+import {MatIconModule} from "@angular/material/icon";
 
 const config = {
   issuer: 'https://dev-705927.okta.com/oauth2/default',
@@ -70,7 +71,8 @@ const appRoutes: Routes = [
     FormsModule,
     HttpClientModule,
     MatTableModule,
-    MatButtonModule
+    MatButtonModule,
+    MatIconModule
   ],
   providers: [
     { provide: OKTA_CONFIG, useValue: config },
