@@ -27,3 +27,7 @@
 .th-right{
     text-align: right;
 }
+
+td {
+    font-size: 12pt;
+}

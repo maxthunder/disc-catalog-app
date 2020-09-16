@@ -5,31 +5,31 @@
     </ng-container>
     <ng-container matColumnDef="brand">
 <!--        <th class="w-100" mat-header-cell *matHeaderCellDef> Brand </th>-->
-        <td class="w-100" mat-cell *matCellDef="let disc">{{disc.brand}}</td>
+        <td mat-cell *matCellDef="let disc">{{disc.brand}}&nbsp;</td>
     </ng-container>
     <ng-container matColumnDef="name">
-        <th class="w-100" mat-header-cell *matHeaderCellDef> Name </th>
-        <td class="w-100" mat-cell *matCellDef="let disc">{{disc.name}}</td>
+        <th mat-header-cell *matHeaderCellDef> Name </th>
+        <td mat-cell *matCellDef="let disc">{{disc.name}}&nbsp;</td>
     </ng-container>
     <ng-container matColumnDef="plastic">
         <th class="w-100" mat-header-cell *matHeaderCellDef> Plastic </th>
-        <td class="w-100" mat-cell *matCellDef="let disc">{{disc.plastic}}</td>
+        <td mat-cell *matCellDef="let disc">{{disc.plastic}}&nbsp;</td>
     </ng-container>
     <ng-container matColumnDef="stability">
         <th class="w-125" mat-header-cell *matHeaderCellDef> Stability </th>
-        <td class="w-50" mat-cell *matCellDef="let disc">{{disc.stability}}</td>
+        <td mat-cell *matCellDef="let disc">{{disc.stability}}&nbsp;</td>
     </ng-container>
     <ng-container matColumnDef="speed">
         <th mat-header-cell *matHeaderCellDef></th>
-        <td mat-cell *matCellDef="let disc">{{disc.speed}} / </td>
+        <td mat-cell *matCellDef="let disc">{{disc.speed}}&nbsp;/&nbsp;</td>
     </ng-container>
     <ng-container matColumnDef="glide">
         <th mat-header-cell *matHeaderCellDef></th>
-        <td mat-cell *matCellDef="let disc">{{disc.glide}} / </td>
+        <td mat-cell *matCellDef="let disc">{{disc.glide}}&nbsp;/&nbsp;</td>
     </ng-container>
     <ng-container matColumnDef="turn">
         <th mat-header-cell *matHeaderCellDef></th>
-        <td mat-cell *matCellDef="let disc">{{disc.turn}} / </td>
+        <td mat-cell *matCellDef="let disc">{{disc.turn}}&nbsp;/&nbsp;</td>
     </ng-container>
     <ng-container matColumnDef="fade">
         <th mat-header-cell *matHeaderCellDef></th>
