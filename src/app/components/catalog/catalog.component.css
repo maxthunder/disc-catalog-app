@@ -1,5 +1,29 @@
-.k-grid tbody td {
-    white-space: nowrap;
-    line-height: 20px;
-    padding: 8px 12px;
+.w-50{
+    width: 75px;
+}
+
+.w-75{
+    width: 75px;
+}
+
+.w-100{
+    width: 100px;
+}
+
+.w-125{
+    width: 125px;
+}
+
+.w-150{
+    width: 150px;
+}
+
+.th-center{
+    text-align: center;
+}
+.th-left{
+    text-align: left;
+}
+.th-right{
+    text-align: right;
 }

@@ -3,7 +3,6 @@ import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { FormsModule } from '@angular/forms';
-import { GridModule } from '@progress/kendo-angular-grid';
 
 import {
   OKTA_CONFIG,
@@ -19,6 +18,8 @@ import {CatalogComponent} from "./components/catalog/catalog.component";
 import { WishlistComponent } from './components/wishlist/wishlist.component';
 import {DataTablesModule} from "angular-datatables";
 import {HttpClientModule} from "@angular/common/http";
+import {MatTableModule} from "@angular/material/table";
+import {MatButtonModule} from "@angular/material/button";
 
 const config = {
   issuer: 'https://dev-705927.okta.com/oauth2/default',
@@ -67,8 +68,9 @@ const appRoutes: Routes = [
     DataTablesModule,
     BrowserAnimationsModule,
     FormsModule,
-    GridModule,
-    HttpClientModule
+    HttpClientModule,
+    MatTableModule,
+    MatButtonModule
   ],
   providers: [
     { provide: OKTA_CONFIG, useValue: config },

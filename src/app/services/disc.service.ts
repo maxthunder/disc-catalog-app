@@ -10,15 +10,15 @@ export class DiscService {
 
   discServicePath:string = "https://disc-catalog-rest-svc.herokuapp.com";
 
-  private discs: Array<Disc>;
+  private discs: Disc[];
 
   constructor(private http: HttpClient) {
     this.discs = [];
   }
 
-  loadAllDiscs(): Observable<Array<Disc>> {
+  loadAllDiscs(): Observable<Disc[]> {
     const url = this.discServicePath+"/discs";
-    return this.http.get<Array<Disc>>(url);
+    return this.http.get<Disc[]>(url);
   }
   
   // addNewDisc(desc): Observable<any> {

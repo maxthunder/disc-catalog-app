@@ -8,9 +8,9 @@ export interface Disc {
   glide: string;
   turn: string;
   fade: string;
-  isInBag: boolean;
-  isCollected: boolean;
-  isOwned: boolean;
+  isinbag: boolean;
+  iscollected: boolean;
+  isowned: boolean;
   description: string;
   notes: string;
   link: string;

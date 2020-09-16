@@ -1,63 +1,41 @@
-<!--<table datatable [dtOptions]="dtOptions" [dtTrigger]="dtTrigger"  class="row-border hover">-->
-<!--    <thead>-->
-<!--    <tr>-->
-<!--        <th>ID</th>-->
-<!--        <th>First name</th>-->
-<!--        <th>Last name</th>-->
-<!--        <th>ID</th>-->
-<!--        <th>First name</th>-->
-<!--        <th>Last name</th>-->
-<!--        <th>ID</th>-->
-<!--        <th>First name</th>-->
-<!--        <th>Last name</th>-->
-<!--        <th>ID</th>-->
-<!--        <th>First name</th>-->
-<!--        <th>Last name</th>-->
-<!--    </tr>-->
-<!--    </thead>-->
-<!--    <tbody>-->
-<!--    <tr>-->
-<!--        <td>1</td>-->
-<!--        <td>Foo</td>-->
-<!--        <td>Bar</td>-->
-<!--    </tr>-->
-<!--    <tr>-->
-<!--        <td>1</td>-->
-<!--        <td>Foo</td>-->
-<!--        <td>Bar</td>-->
-<!--    </tr>-->
-<!--    <tr>-->
-<!--        <td>1</td>-->
-<!--        <td>Foo</td>-->
-<!--        <td>Bar</td>-->
-<!--    </tr>-->
-<!--    </tbody>-->
-<!--</table>-->
+<table mat-table [dataSource]="discs" class="mat-elevation-z8">
 
-<kendo-grid
-        [data]="gridView"
-        [skip]="skip"
-        [pageSize]="pageSize"
-        scrollable="virtual"
-        [rowHeight]="36"
-        [height]="450"
-        (pageChange)="pageChange($event)"
-        [navigable]="true"
->
-    <kendo-grid-column field="brand" title="Brand" [width]="100"></kendo-grid-column>
-    <kendo-grid-column field="name" title="Name" [width]="100"></kendo-grid-column>
-    <kendo-grid-column field="plastic" title="Plastic" [width]="100"></kendo-grid-column>
-    <kendo-grid-column field="stability" title="Stability" [width]="130"></kendo-grid-column>
-    <kendo-grid-column field="speed" title="Speed" [width]="80"></kendo-grid-column>
-    <kendo-grid-column field="glide" title="Glide" [width]="80"></kendo-grid-column>
-    <kendo-grid-column field="turn" title="Turn" [width]="80"></kendo-grid-column>
-    <kendo-grid-column field="fade" title="Fade" [width]="80"></kendo-grid-column>
-    <kendo-grid-column field="isinbag" title="In Bag?" [width]="80"></kendo-grid-column>
-    <kendo-grid-column field="iscollected" title="Collected?" [width]="80"></kendo-grid-column>
-    <kendo-grid-column field="isowned" title="Owned?" [width]="130"></kendo-grid-column>
-<!--    <kendo-grid-column field="description" title="Name" [width]="130"></kendo-grid-column>-->
-<!--    <kendo-grid-column field="notes" title="Name" [width]="130"></kendo-grid-column>-->
-<!--    <kendo-grid-column field="<a>${link}</a>" title="Link" [width]="130" template="<a>${link}</a>"></kendo-grid-column>-->
-    <kendo-grid-column field="link" title="Link" [width]="130"></kendo-grid-column>
-</kendo-grid>
-
+    <ng-container matColumnDef="brand">
+        <th class="w-100" mat-header-cell *matHeaderCellDef> Brand </th>
+        <td mat-cell *matCellDef="let disc">{{disc.brand}}</td>
+    </ng-container>
+    <ng-container matColumnDef="name">
+        <th class="w-100" mat-header-cell *matHeaderCellDef> Name </th>
+        <td mat-cell *matCellDef="let disc">{{disc.name}}</td>
+    </ng-container>
+    <ng-container matColumnDef="plastic">
+        <th class="w-100" mat-header-cell *matHeaderCellDef> Plastic </th>
+        <td mat-cell *matCellDef="let disc">{{disc.plastic}}</td>
+    </ng-container>
+    <ng-container matColumnDef="stability">
+        <th class="w-125" mat-header-cell *matHeaderCellDef> Stability </th>
+        <td mat-cell *matCellDef="let disc">{{disc.stability}}</td>
+    </ng-container>
+    <ng-container matColumnDef="speed">
+        <th class="w-50" mat-header-cell *matHeaderCellDef> Speed </th>
+        <td mat-cell *matCellDef="let disc">{{disc.speed}}</td>
+    </ng-container>
+    <ng-container matColumnDef="glide">
+        <th class="w-50" mat-header-cell *matHeaderCellDef> Glide </th>
+        <td mat-cell *matCellDef="let disc">{{disc.glide}}</td>
+    </ng-container>
+    <ng-container matColumnDef="turn">
+        <th class="w-50" mat-header-cell *matHeaderCellDef> Turn </th>
+        <td mat-cell *matCellDef="let disc">{{disc.turn}}</td>
+    </ng-container>
+    <ng-container matColumnDef="fade">
+        <th class="w-50" mat-header-cell *matHeaderCellDef> Fade </th>
+        <td mat-cell *matCellDef="let disc">{{disc.fade}}</td>
+    </ng-container>
+    <ng-container matColumnDef="link">
+        <th mat-header-cell *matHeaderCellDef></th>
+        <td mat-cell *matCellDef="let disc"><a mat-raised-button href="{{disc.link}}" target="_blank">More Info</a></td>
+    </ng-container>
+    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+    <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+</table>
