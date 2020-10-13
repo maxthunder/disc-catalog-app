@@ -3,14 +3,6 @@ import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { FormsModule } from '@angular/forms';
-
-import {
-  OKTA_CONFIG,
-  OktaAuthModule,
-  OktaCallbackComponent,
-  OktaAuthGuard
-} from '@okta/okta-angular';
-
 import { AppComponent } from './app.component';
 import { LoginComponent } from "./components/login/login.component";
 import {ProtectedComponent} from "./components/protected/protected.component";
@@ -21,6 +13,13 @@ import {HttpClientModule} from "@angular/common/http";
 import {MatTableModule} from "@angular/material/table";
 import {MatButtonModule} from "@angular/material/button";
 import {MatIconModule} from "@angular/material/icon";
+import { AddDiscComponent } from './components/add-disc/add-disc.component';
+import {MatDialogModule} from "@angular/material/dialog";
+import {OKTA_CONFIG, OktaAuthModule, OktaCallbackComponent, OktaAuthGuard} from '@okta/okta-angular';
+import {MatFormFieldModule} from "@angular/material/form-field";
+import {MatSortModule} from "@angular/material/sort";
+import {MatOptionModule} from "@angular/material/core";
+import {MatSelectModule} from "@angular/material/select";
 
 const config = {
   issuer: 'https://dev-705927.okta.com/oauth2/default',
@@ -36,6 +35,7 @@ export function onAuthRequired({ oktaAuth, router }) {
 
 const appRoutes: Routes = [
   { path: '', component: CatalogComponent },
+  { path: 'addDisc', component: AddDiscComponent },
   { path: 'wishlist', component: WishlistComponent },
   // {
   //   path: 'implicit/callback',
@@ -61,6 +61,7 @@ const appRoutes: Routes = [
     LoginComponent,
     ProtectedComponent,
     WishlistComponent,
+    AddDiscComponent,
   ],
   imports: [
     BrowserModule,
@@ -71,8 +72,13 @@ const appRoutes: Routes = [
     FormsModule,
     HttpClientModule,
     MatTableModule,
+    MatSortModule,
     MatButtonModule,
-    MatIconModule
+    MatIconModule,
+    MatDialogModule,
+    MatFormFieldModule,
+    MatOptionModule,
+    MatSelectModule
   ],
   providers: [
     { provide: OKTA_CONFIG, useValue: config },

@@ -14,6 +14,7 @@
       <!-- Navigation. We hide it in small screens. -->
       <nav class="mdl-navigation">
         <a class="task-header-button mdl-layout-title mdl-layout--large-screen-only" [routerLink]="['/']">Home</a>
+        <a class="task-header-button mdl-layout-title mdl-layout--large-screen-only" [routerLink]="['/addDisc']">Add</a>
         <a class="task-header-button mdl-layout-title mdl-layout--large-screen-only" [routerLink]="['/wishlist']">Wishlist</a>
       </nav>
     </div>
@@ -22,6 +23,7 @@
     <span class="mdl-layout-title"><img src="../assets/maxthunder-logo.png" height="48" width="48"/></span>
     <nav class="mdl-navigation">
       <a class="task-header-button" [routerLink]="['/']">Home</a>
+      <a class="task-header-button" [routerLink]="['/addDisc']">Add</a>
       <a class="task-header-button" [routerLink]="['/wishlist']">Wishlist</a>
     </nav>
   </div>
@@ -34,6 +36,7 @@
         <div class="mdl-logo"><img src="../assets/maxthunder-logo.png" height="48" width="48"/></div>
         <ul class="mdl-mini-footer__link-list">
           <li><a [routerLink]="['/']" style="color: white">Home</a></li>
+          <li><a [routerLink]="['/addDisc']" style="color: white">Add</a></li>
           <li><a [routerLink]="['/wishlist']" style="color: white">Wishlist</a></li>
           <li><a href="https://github.com/maxthunder" style="color: white">Developer's GitHub Page</a></li>
         </ul>
